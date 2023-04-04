@@ -30,13 +30,13 @@
     letter-spacing: 2px;
 }
 
-.categorie_form {
+.form {
     visibility: hidden;
     overflow: hidden;
     transition: all .25s linear;
 }
 
-.categorie_form.active {
+.form.active {
     visibility: visible;
     overflow: auto;
 

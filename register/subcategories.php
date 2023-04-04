@@ -9,7 +9,7 @@ if (!empty($id)) {
 }
 
 $id = $dados->id ?? NULL;
-$categoria = $dados->subcatagoria ?? NULL;
+$categoria = $dados->subcategoria ?? NULL;
 ?>
 
 <div class="card">

@@ -1,7 +1,6 @@
 <?php
-if (!$_POST) {
+if (!$_POST)
     mensagem("Erro Requisiçã inválida");
-}
 
 //recuperar os dados digitados no formulário
 //print_r($_POST);

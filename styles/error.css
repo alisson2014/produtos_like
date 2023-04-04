@@ -1,0 +1,30 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 128px;
+}
+
+.error_img {
+    mix-blend-mode: multiply;
+}
+
+.error_button {
+    padding: 16px 32px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.error_button:hover {
+    transform: scale(1.05);
+    letter-spacing: 2px;
+}
+
+.error_button a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+}

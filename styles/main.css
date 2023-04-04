@@ -1,0 +1,7 @@
+.main {
+    margin: 0 auto;
+    height: 76vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

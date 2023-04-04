@@ -1,5 +1,6 @@
 <div class="error">
-    <h2>404</h2>
-    <span>Página não encontrada</span>
-    <button type="button">Voltar</button>
+    <img src="../images/404.png" alt="error-404" class="error_img" />
+    <button type="button" class="error_button">
+        <a href="index.php?page=home">Voltar</a>
+    </button>
 </div>

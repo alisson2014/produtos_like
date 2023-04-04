@@ -1,12 +1,11 @@
-const viewButton = document.querySelector("#viewButton");
+function addEvent(form, button) {
+  const htmlElement = document.querySelector(`#${form}`);
+  const buttonElement = document.querySelector(`#${button}`);
 
-function addEvent(id) {
-  const htmlElement = document.querySelector(`#${id}`);
-
-  viewButton.addEventListener("click", () => {
+  buttonElement.addEventListener("click", () => {
     htmlElement.classList.toggle("active");
   });
 }
 
-addEvent("formCategories");
-addEvent("formProducts");
+addEvent("formCategories", "registerCategorie");
+addEvent("formCategories", "updateCategorie");

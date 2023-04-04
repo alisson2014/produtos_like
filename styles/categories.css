@@ -26,7 +26,7 @@
 .categorie_form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 
     width: 480px;
     background-color: #F2F2F2;
@@ -54,4 +54,6 @@
 
 .form_button {
     background-color: aqua;
+    align-self: center;
+    margin-top: 1rem;
 }

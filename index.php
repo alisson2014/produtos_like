@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/error.css" />
     <link rel="stylesheet" href="styles/categories.css" />
+    <link rel="stylesheet" href="styles/products.css" />
 </head>
 
 <body>

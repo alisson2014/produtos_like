@@ -6,10 +6,10 @@
 
 html,
 body {
-    background: #4cd4e6;
+    background: #ccc;
     font-family: "Montserrat", sans-serif;
 }
 
 body * {
-    color: #181818;
+    color: #F5F5FF;
 }

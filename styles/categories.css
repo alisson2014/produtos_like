@@ -6,6 +6,12 @@
     gap: 16px;
 }
 
+.categories_title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #151515;
+}
+
 .categories_button,
 .form_button {
     font-size: 1.5rem;
@@ -13,6 +19,7 @@
     padding: 14px 28px;
     border: none;
     border-radius: 10px;
+    color: #151515;
     cursor: pointer;
     transition: all .3s linear;
 }
@@ -45,6 +52,7 @@
 }
 
 .form_label {
+    color: #151515;
     font-size: 1.5rem;
     font-weight: 500;
 }

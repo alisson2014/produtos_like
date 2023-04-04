@@ -75,6 +75,7 @@
     </footer>
 
     <script type="module" src="js/navbar.js"></script>
+    <script type="text/javascript" src="js/viewForm.js"></script>
 </body>
 
 </html>

@@ -24,6 +24,15 @@
 }
 
 .categorie_form {
+    visibility: hidden;
+    overflow: hidden;
+    transition: all .25s linear;
+}
+
+.categorie_form.active {
+    visibility: visible;
+    overflow: auto;
+
     display: flex;
     flex-direction: column;
     gap: 6px;

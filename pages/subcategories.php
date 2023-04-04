@@ -1,6 +1,6 @@
 <div class="categories">
     <h2 class="categories_title">Subcategorias</h2>
-    <button type="button" class="categories_button">
+    <button type="button" class="categories_button" id="viewButton">
         Nova subcategoria
     </button>
     <form action="" class="categorie_form" id="formCategories">

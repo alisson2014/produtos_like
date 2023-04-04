@@ -1,5 +1,5 @@
 <div class="categories">
-    <h2 class="categories_title">Subcategorias</h2>
+    <h2 class="title">Subcategorias</h2>
     <?php
     $sqlCategorias = "SELECT * FROM subcategoria";
     $consultaCategorias = $pdo->prepare($sqlCategorias);

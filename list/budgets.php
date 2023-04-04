@@ -1,1 +1,1 @@
-<h2>Orçamentos</h2>
+<h2 class="title">Orçamentos</h2>

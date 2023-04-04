@@ -27,6 +27,7 @@
 .footer_development {
     font-size: 1.25rem;
     font-weight: 500;
+    color: #F5F5FF;
 }
 
 @media screen and (max-width: 860px) {

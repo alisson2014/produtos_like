@@ -20,6 +20,7 @@ include "config.php";
     <link rel="stylesheet" href="styles/error.css" />
     <link rel="stylesheet" href="styles/categories.css" />
     <link rel="stylesheet" href="styles/products.css" />
+    <link rel="stylesheet" href="styles/form.css" />
 </head>
 
 <body>

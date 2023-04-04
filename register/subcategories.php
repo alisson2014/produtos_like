@@ -13,19 +13,19 @@ $categoria = $dados->subcatagoria ?? NULL;
 ?>
 
 <div class="card">
-    <h2>Cadastrar subcategoria</h2>
-    <form action="save/subcategories" method="POST">
-        <label for="id">ID:</label>
-        <input type="text" name="id" id="id" value="<?= $id ?>" readonly>
+    <h2 class="title">Cadastrar subcategoria</h2>
+    <form action="save/subcategories" method="POST" class="form">
+        <label for="id" class="form_label">ID:</label>
+        <input type="text" class="form_input" name="id" id="id" value="<?= $id ?>" readonly>
 
         <br>
 
-        <label for="categorie">Digite o nome da Categoria:</label>
-        <input type="text" name="categorie" id="categorie" value="<?= $categoria ?>" required>
+        <label for="categorie" class="form_label">Digite o nome da Categoria:</label>
+        <input type="text" class="form_input" placeholder="Digite o nome da Categoria" name="categorie" id="categorie" value="<?= $categoria ?>" required>
 
         <br>
 
-        <button type="submit">
+        <button type="submit" class="form_button">
             Salvar Dados
         </button>
     </form>

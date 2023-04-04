@@ -8,18 +8,17 @@
     while ($dados = $consultaCategorias->fetch(PDO::FETCH_OBJ)) {
         $name = $dados->nome;
         $id = $dados->id;
-
-        echo "
-            <div class='categories_list'>
-                <div class='categorie'>
-                    <p>CATEGORIA: {$name}</p>
-                </div>
-                <div class='buttons'>
-                    <button type='button'>Editar</button>
-                    <button type='button'>Deletar</button>
-                </div>
+    ?>
+        <div class='categories_list'>
+            <div class='categorie'>
+                <p>CATEGORIA: <?= $name ?></p>
             </div>
-                ";
+            <div class='buttons'>
+                <button type='button'>Editar</button>
+                <button type='button'>Deletar</button>
+            </div>
+        </div>
+    <?php
     }
     ?>
     <button type="button" class="categories_button">

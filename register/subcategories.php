@@ -14,14 +14,14 @@ $categoria = $dados->subcatagoria ?? NULL;
 
 <div class="card">
     <h2 class="title">Cadastrar subcategoria</h2>
-    <form action="save/subcategories" method="POST" class="form">
+    <form name="formCadastro" action="save/subcategories" method="post" class="form">
         <label for="id" class="form_label">ID:</label>
         <input type="text" class="form_input" name="id" id="id" value="<?= $id ?>" readonly>
 
         <br>
 
         <label for="categorie" class="form_label">Digite o nome da Categoria:</label>
-        <input type="text" class="form_input" placeholder="Digite o nome da Categoria" name="categorie" id="categorie" value="<?= $categoria ?>" required>
+        <input type="text" class="form_input" placeholder="Digite o nome da Categoria" name="categoria" id="categorie" value="<?= $categoria ?>" required>
 
         <br>
 

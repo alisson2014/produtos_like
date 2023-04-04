@@ -28,6 +28,7 @@
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 300;
+    color: #151515;
 }
 
 @media screen and (max-width: 860px) {

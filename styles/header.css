@@ -14,9 +14,7 @@
     height: 12vh;
     padding: 8px;
 
-    background: rgba(0, 0, 0, 0.04);
-    backdrop-filter: var(--blur);
-    -webkit-backdrop-filter: var(--blur);
+    background: rgba(92, 184, 255);
     border-bottom: 2px solid #111;
 }
 

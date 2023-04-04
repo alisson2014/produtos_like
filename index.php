@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/error.css" />
 </head>
 
@@ -63,8 +64,13 @@
         ?>
     </main>
 
-    <footer>
-        Desenvolvido por Alisson
+    <footer class="footer">
+        <div class="footer_social">
+            <img src="images/facebook.svg" alt="facebook-icon" title="facebook-icon" />
+            <img src="images/instagram.svg" alt="instagram-icon" title="instagram-icon" />
+            <img src="images/twitter.svg" alt="twitter-icon" title="twitter-icon" />
+        </div>
+        <i class="footer_development">Desenvolvido por alisson</i>
     </footer>
 
     <script type="module" src="js/navbar.js"></script>

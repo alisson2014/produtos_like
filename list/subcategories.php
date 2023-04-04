@@ -10,12 +10,12 @@
         $id = $dados->id;
 
         echo "
-            <div class='categories_table'>
+            <div class='categories_list'>
                 <div class='categorie'>
                     <p>CATEGORIA: {$name}</p>
                 </div>
                 <div class='buttons'>
-                    <button type='button' id='updateCategorie'>Editar</button>
+                    <button type='button'>Editar</button>
                     <button type='button'>Deletar</button>
                 </div>
             </div>
@@ -23,6 +23,8 @@
     }
     ?>
     <button type="button" class="categories_button">
-        Nova subcategoria
+        <a href="index.php?action=register&table=subcategories">
+            Nova categoria
+        </a>
     </button>
 </div>

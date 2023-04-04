@@ -12,8 +12,7 @@
     color: #151515;
 }
 
-.categories_button,
-.form_button {
+.categories_button {
     font-size: 1.5rem;
     font-weight: 300;
     padding: 14px 28px;
@@ -24,58 +23,17 @@
     transition: all .3s linear;
 }
 
-.categories_button:hover,
-.form_button:hover {
-    transform: scale(1.05);
-    letter-spacing: 2px;
+.categories_button a {
+    text-decoration: none;
+    color: #181818;
 }
 
-.form {
-    visibility: hidden;
-    overflow: hidden;
-    transition: all .25s linear;
+.categories_button:hover {
+    transform: scale(1.035);
+    letter-spacing: 1.5px;
 }
 
-.form.active {
-    visibility: visible;
-    overflow: auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-
-    width: 480px;
-    background-color: #F2F2F2;
-    border-radius: 20px;
-    padding: 24px 48px;
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
-}
-
-.form_label {
-    color: #151515;
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.form_input {
-    font-size: 1.25rem;
-    font-weight: 300;
-    line-height: 20px;
-    background-color: #FFF;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    padding: 24px;
-}
-
-.form_button {
-    background-color: aqua;
-    align-self: center;
-    margin-top: 1rem;
-}
-
-.categories_table {
+.categories_list {
     width: 100%;
     display: flex;
     align-items: center;

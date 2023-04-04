@@ -22,16 +22,7 @@
                 ";
     }
     ?>
-    <button type="button" class="categories_button" id="registerCategorie">
+    <button type="button" class="categories_button">
         Nova subcategoria
     </button>
-    <form action="" class="form" id="formCategories">
-        <label for="id" class="form_label">ID</label>
-        <input type="text" class="form_input" id="id" readonly>
-
-        <label for="categorie" class="form_label">Categoria</label>
-        <input type="text" name="categorie" id="categorie" class="form_input" placeholder="Digite uma nova categoria" required />
-
-        <button type="submit" class="form_button">Cadastrar</button>
-    </form>
 </div>

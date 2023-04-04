@@ -33,22 +33,22 @@ include "config.php";
             </button>
             <ul id="menu" role="menu">
                 <li>
-                    <a href="index.php?page=home" class="link" title="Pagina inicial">
+                    <a href="index.php?action=list&table=home" class="link" title="Pagina inicial">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?page=subcategories" class="link" title="Pagina de subcategorias">
+                    <a href="index.php?action=list&table=subcategories" class="link" title="Pagina de subcategorias">
                         Subcategorias
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?page=products" class="link" title="Pagina  de produtos">
+                    <a href="index.php?action=list&table=products" class="link" title="Pagina  de produtos">
                         Produtos
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?page=budgets" class="link" title="Pagina de orçamento">
+                    <a href="index.php?action=list&table=budgets" class="link" title="Pagina de orçamento">
                         Orçamento
                     </a>
                 </li>
@@ -58,11 +58,12 @@ include "config.php";
 
     <main class="main">
         <?php
-        $page = $_GET["page"] ?? "home";
-        $page = "pages/{$page}.php";
+        $action = $_GET["action"] ?? "pages";
+        $table = $_GET["table"] ?? "home";
+        $file = "{$action}/{$table}.php";
 
-        if (file_exists($page)) {
-            include $page;
+        if (file_exists($file)) {
+            include $file;
         } else {
             include "pages/error.php";
         }
@@ -79,7 +80,6 @@ include "config.php";
     </footer>
 
     <script type="module" src="js/navbar.js"></script>
-    <script type="text/javascript" src="js/viewForm.js"></script>
 </body>
 
 </html>

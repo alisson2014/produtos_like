@@ -74,3 +74,37 @@
     align-self: center;
     margin-top: 1rem;
 }
+
+.categories_table {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.categorie {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.categorie p {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.buttons button {
+    font-size: 1.35rem;
+    font-weight: 300;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 10px;
+    color: #151515;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.buttons button:hover {
+    transform: scale(1.02);
+    letter-spacing: 2px;
+}

@@ -7,6 +7,7 @@
 }
 
 .error_img {
+    width: 620px;
     mix-blend-mode: multiply;
 }
 
@@ -27,4 +28,10 @@
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 300;
+}
+
+@media screen and (max-width: 860px) {
+    .error_img {
+        width: 450px;
+    }
 }

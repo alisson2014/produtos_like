@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/error.css" />
+    <link rel="stylesheet" href="styles/categories.css" />
 </head>
 
 <body>

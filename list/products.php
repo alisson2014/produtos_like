@@ -23,12 +23,12 @@
                 <div class="product">
                     <p><?= $subcategoria ?></p>
                 </div>
-                <div class='buttons'>
-                    <button type='button'>
-                        <a href="index.php?action=register&table=subcategories&id=<?= $id ?>">Editar</a>
+                <div class="buttons">
+                    <button type="button">
+                        <a href="index.php?action=register&table=products&id=<?= $id ?>">Editar</a>
                     </button>
-                    <button type='button'>
-                        <a href="index.php?action=delete&table=subcategories&id=<?= $id ?>">Deletar</a>
+                    <button type="button">
+                        <a href="index.php?action=delete&table=products&id=<?= $id ?>">Deletar</a>
                     </button>
                 </div>
             </div>
@@ -38,6 +38,8 @@
         ?>
     </div>
     <button type="button" class="categories_button">
-        Novo produto
+        <a href="index.php?action=register&table=products">
+            Novo produto
+        </a>
     </button>
 </div>

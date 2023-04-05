@@ -1,3 +1,11 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -44,4 +52,15 @@
 .form_button:hover {
     transform: scale(1.02);
     letter-spacing: 1px;
+}
+
+.form_select {
+    background-color: #FFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    padding: 24px;
+    cursor: pointer;
 }

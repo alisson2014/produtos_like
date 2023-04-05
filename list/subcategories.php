@@ -17,7 +17,9 @@
                 <button type='button'>
                     <a href="index.php?action=register&table=subcategories&id=<?= $id ?>">Editar</a>
                 </button>
-                <button type='button'>Deletar</button>
+                <button type='button'>
+                    <a href="index.php?action=delete&table=subcategories&id=<?= $id ?>">Deletar</a>
+                </button>
             </div>
         </div>
     <?php

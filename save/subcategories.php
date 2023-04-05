@@ -36,13 +36,3 @@ if ($consulta->execute()) {
 } else {
     mensagem("Erro não foi possível salvar ou alterar o registro");
 }
-
-function mensagem(string $msg): string
-{
-    return "
-        <script>
-            alert($msg);
-            history.back();
-        </script>
-    ";
-}

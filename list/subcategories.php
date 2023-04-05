@@ -15,13 +15,11 @@
                 <div class='categorie'>
                     <p><?= $nome ?></p>
                 </div>
-                <div class='buttons'>
-                    <button type='button'>
+                <div class="buttons">
+                    <button type="button">
                         <a href="index.php?action=register&table=subcategories&id=<?= $id ?>">Editar</a>
                     </button>
-                    <button type='button'>
-                        <a href="index.php?action=delete&table=subcategories&id=<?= $id ?>">Deletar</a>
-                    </button>
+                    <button type="button" onclick="excluir(<?= $id ?>)">Excluir</button>
                 </div>
             </div>
             <hr>

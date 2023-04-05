@@ -1,5 +1,6 @@
 <?php
-include "config.php";
+include "config/config.php";
+include "config/functions.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -82,7 +83,8 @@ include "config.php";
     </footer>
 
     <!-- arquivos js -->
-    <script type="module" src="js/navbar.js"></script>
+    <script type="text/javascript" src="js/navbar.js"></script>
+    <script type="text/javascript" src="js/excluir.js"></script>
 </body>
 
 </html>

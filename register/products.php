@@ -48,7 +48,7 @@ $categorias_id = $dados->subcategoria ?? NULL;
                 $idCategoria = $dadosCategoria->id;
                 $nomeCategoria = $dadosCategoria->nome;
             ?>
-                <option value="<?= $idCategoria ?>">
+                <option value="<?= $idCategoria ?>" <?= $idCategoria === $categorias_id ? "selected" : "" ?>>
                     <?= $nomeCategoria ?>
                 </option>
             <?php

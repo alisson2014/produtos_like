@@ -15,8 +15,8 @@ $consultaCategoria->execute();
 
 $dados = $consultaCategoria->fetch(PDO::FETCH_OBJ);
 
-if (!empty($dados->id)) {
-    mensagem("Erro, esta categoria não pode ser excluída pois existe um produto utilizando o registro");
+if (empty($dados->id)) {
+    mensagem("Erro, nenhuma categoria encontrada!");
 }
 
 //excluir o registro

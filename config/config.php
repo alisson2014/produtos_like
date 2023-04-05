@@ -9,14 +9,3 @@ try {
 } catch (Exception $erro) {
     echo "<p>Erro ao conectar com o a base de dados: {$erro}</p>";
 }
-
-function mensagem(string $msg): void
-{
-    echo "
-        <script>
-            alert('{$msg}');
-            history.back();
-        </script>
-    ";
-    exit;
-}

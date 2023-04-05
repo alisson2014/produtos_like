@@ -11,7 +11,8 @@ $subcategoria = trim($_POST["subcategoria"] ?? NULL);
 if (empty($subcategoria))
     mensagem("Erro, preencha a subcategoria");
 
-$sqlsubcategoria = "select id from subcategoria where subcategoria = :subcategoria
+$sqlsubcategoria = "select id from subcategoria 
+    where nome = :subcategoria
 AND id <> :id limit 1";
 $consultasubcategoria = $pdo->prepare($sqlsubcategoria);
 $consultasubcategoria->bindParam(":id", $id);
@@ -26,14 +27,14 @@ if (!empty($dados->id))
 //verificar se vamos dar um insert ou um update
 if (empty($id)) {
     //insert
-    $sql = "insert into subcategorias values (NULL, :subcategoria)";
+    $sql = "insert into subcategoria values (NULL, :subcategoria)";
     $consulta = $pdo->prepare($sql);
     $consulta->bindParam(":subcategoria", $subcategoria);
 } else {
     //update
-    $sql = "update subcategorias set subcategoria = :subcategoria where id = :id limit 1";
+    $sql = "update subcategoria set nome = :subcategoria where id = :id limit 1";
     $consulta = $pdo->prepare($sql);
-    $consulta->bindParam(":categoria", $categoria);
+    $consulta->bindParam(":subcategoria", $categoria);
     $consulta->bindParam(":id", $id);
 }
 

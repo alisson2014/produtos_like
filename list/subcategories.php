@@ -11,10 +11,12 @@
     ?>
         <div class='categories_list'>
             <div class='categorie'>
-                <p>CATEGORIA: <?= $name ?></p>
+                <p><?= $name ?></p>
             </div>
             <div class='buttons'>
-                <button type='button'>Editar</button>
+                <button type='button'>
+                    <a href="index.php?action=register&table=subcategories">Editar</a>
+                </button>
                 <button type='button'>Deletar</button>
             </div>
         </div>

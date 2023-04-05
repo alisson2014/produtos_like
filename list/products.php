@@ -24,9 +24,7 @@
                     <p><?= $nomeCategoria ?></p>
                 </div>
                 <div class="buttons">
-                    <button type="button">
-                        <a href="index.php?action=register&table=products&id=<?= $id ?>">Editar</a>
-                    </button>
+                    <button type="button" onclick="registrar('products', <?= $id ?>)">Editar</button>
                     <button type="button" onclick="excluir('products', <?= $id ?>)">Excluir</button>
                 </div>
             </div>

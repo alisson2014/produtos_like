@@ -16,9 +16,7 @@
                     <p><?= $nome ?></p>
                 </div>
                 <div class="buttons">
-                    <button type="button">
-                        <a href="index.php?action=register&table=subcategories&id=<?= $id ?>">Editar</a>
-                    </button>
+                    <button type="button" onclick="registrar('subcategories', <?= $id ?>)">Editar</button>
                     <button type="button" onclick="excluir('subcategories', <?= $id ?>)">Excluir</button>
                 </div>
             </div>

@@ -85,6 +85,7 @@ include "config/functions.php";
     <!-- arquivos js -->
     <script type="text/javascript" src="js/navbar.js"></script>
     <script type="text/javascript" src="js/excluir.js"></script>
+    <script type="text/javascript" src="js/registrar.js"></script>
 </body>
 
 </html>

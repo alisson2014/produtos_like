@@ -6,16 +6,16 @@
     $consultaCategorias->execute();
 
     while ($dados = $consultaCategorias->fetch(PDO::FETCH_OBJ)) {
-        $name = $dados->nome;
+        $nome = $dados->nome;
         $id = $dados->id;
     ?>
         <div class='categories_list'>
             <div class='categorie'>
-                <p><?= $name ?></p>
+                <p><?= $nome ?></p>
             </div>
             <div class='buttons'>
                 <button type='button'>
-                    <a href="index.php?action=register&table=subcategories">Editar</a>
+                    <a href="index.php?action=register&table=subcategories&id=<?= $id ?>">Editar</a>
                 </button>
                 <button type='button'>Deletar</button>
             </div>

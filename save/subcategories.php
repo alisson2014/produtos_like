@@ -3,7 +3,6 @@ if (!$_POST)
     mensagem("Erro Requisiçã inválida");
 
 //recuperar os dados digitados no formulário
-//print_r($_POST);
 $id = trim($_POST["id"] ?? NULL);
 $subcategoria = trim($_POST["subcategoria"] ?? NULL);
 
@@ -11,14 +10,11 @@ $subcategoria = trim($_POST["subcategoria"] ?? NULL);
 if (empty($subcategoria))
     mensagem("Erro, preencha a subcategoria");
 
-$sqlsubcategoria = "select id from subcategoria 
-    where nome = :subcategoria
-AND id <> :id limit 1";
+$sqlsubcategoria = "SELECT id FROM subcategoria 
+    WHERE nome = '{$subcategoria}'
+AND id <> '{$id}' LIMIT 1";
 $consultasubcategoria = $pdo->prepare($sqlsubcategoria);
-$consultasubcategoria->bindParam(":id", $id);
-$consultasubcategoria->bindParam(":subcategoria", $subcategoria);
 $consultasubcategoria->execute();
-
 $dados = $consultasubcategoria->fetch(PDO::FETCH_OBJ);
 
 if (!empty($dados->id))
@@ -27,15 +23,12 @@ if (!empty($dados->id))
 //verificar se vamos dar um insert ou um update
 if (empty($id)) {
     //insert
-    $sql = "insert into subcategoria values (NULL, :subcategoria)";
+    $sql = "INSERT INTO subcategoria VALUES (NULL, '{$subcategoria}')";
     $consulta = $pdo->prepare($sql);
-    $consulta->bindParam(":subcategoria", $subcategoria);
 } else {
     //update
-    $sql = "update subcategoria set nome = :subcategoria where id = :id limit 1";
+    $sql = "UPDATE subcategoria SET nome = '{$subcategoria}' WHERE id = '{$id}' LIMIT 1";
     $consulta = $pdo->prepare($sql);
-    $consulta->bindParam(":subcategoria", $categoria);
-    $consulta->bindParam(":id", $id);
 }
 
 if ($consulta->execute()) {

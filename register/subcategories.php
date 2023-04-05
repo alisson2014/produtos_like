@@ -1,16 +1,16 @@
 <?php
+$id = $_GET["id"] ?? NULL;
 
 if (!empty($id)) {
-    $sqlCategoria = "SELECT * FROM subcategoria WHERE id = :id LIMIT 1";
+    $id = (int)$id;
+    $sqlCategoria = "SELECT * FROM subcategoria WHERE id = '{$id}'";
     $consultaCategoria = $pdo->prepare($sqlCategoria);
-    $consultaCategoria->bindParam(":id", $id);
     $consultaCategoria->execute();
 
     $dados = $consultaCategoria->fetch(PDO::FETCH_OBJ);
+    $id = $dados->id ?? NULL;
+    $categoria = $dados->nome ?? NULL;
 }
-
-$id = $dados->id ?? NULL;
-$categoria = $dados->subcategoria ?? NULL;
 ?>
 
 <div class="card">

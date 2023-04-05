@@ -19,7 +19,7 @@
                     <button type="button">
                         <a href="index.php?action=register&table=subcategories&id=<?= $id ?>">Editar</a>
                     </button>
-                    <button type="button" onclick="excluir(<?= $id ?>)">Excluir</button>
+                    <button type="button" onclick="excluir('subcategories', <?= $id ?>)">Excluir</button>
                 </div>
             </div>
             <hr>

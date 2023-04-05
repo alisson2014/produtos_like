@@ -27,9 +27,7 @@
                     <button type="button">
                         <a href="index.php?action=register&table=products&id=<?= $id ?>">Editar</a>
                     </button>
-                    <button type="button">
-                        <a href="index.php?action=delete&table=products&id=<?= $id ?>">Deletar</a>
-                    </button>
+                    <button type="button" onclick="excluir('products', <?= $id ?>)">Excluir</button>
                 </div>
             </div>
             <hr>

@@ -12,10 +12,6 @@ try {
 
 function mensagem(string $msg)
 {
-    return "
-        <script>
-            alert($msg);
-            history.back();
-        </script>
-    ";
+    echo "<script>alert('{$msg}');history.back();</script>";
+    exit;
 }

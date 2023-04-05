@@ -8,9 +8,11 @@ if (!empty($id)) {
     $consultaCategoria->execute();
 
     $dados = $consultaCategoria->fetch(PDO::FETCH_OBJ);
-    $id = $dados->id ?? NULL;
-    $categoria = $dados->nome ?? NULL;
 }
+
+$id = $dados->id ?? NULL;
+$categoria = $dados->nome ?? NULL;
+
 ?>
 
 <div class="card">

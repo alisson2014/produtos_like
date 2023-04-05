@@ -38,11 +38,22 @@ $categorias_id = $dados->subcategoria ?? NULL;
 
         <label for="categorias" class="form_label">Categoria: </label>
         <select name="categorias" id="categorias" class="form_select">
-            <option value=""></option>
-            <option value="">Categoria</option>
-            <option value="">Categoria</option>
-            <option value="">Categoria</option>
-            <option value="">Categoria</option>
+            <option value="">Selecione</option>
+            <?php
+            $sqlCategoria = "SELECT * FROM subcategoria ORDER BY nome";
+            $consultaCategoria = $pdo->prepare($sqlCategoria);
+            $consultaCategoria->execute();
+
+            while ($dadosCategoria = $consultaCategoria->fetch(PDO::FETCH_OBJ)) {
+                $idCategoria = $dadosCategoria->id;
+                $nomeCategoria = $dadosCategoria->nome;
+            ?>
+                <option value="<?= $idCategoria ?>">
+                    <?= $nomeCategoria ?>
+                </option>
+            <?php
+            }
+            ?>
         </select>
 
         <button type="submit" class="form_button">

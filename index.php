@@ -12,7 +12,8 @@ include "config.php";
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRUD - PHP</title>
+    <title>Sistema de cadastro</title>
+    <!-- arquivos css -->
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/main.css" />
@@ -34,7 +35,7 @@ include "config.php";
             </button>
             <ul id="menu" role="menu">
                 <li>
-                    <a href="index.php?action=list&table=home" class="link" title="Pagina inicial">
+                    <a href="index.php" class="link" title="Pagina inicial">
                         Home
                     </a>
                 </li>
@@ -80,6 +81,7 @@ include "config.php";
         <i class="footer_development">Desenvolvido por alisson</i>
     </footer>
 
+    <!-- arquivos js -->
     <script type="module" src="js/navbar.js"></script>
 </body>
 

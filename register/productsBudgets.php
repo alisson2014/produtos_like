@@ -17,7 +17,7 @@ $nomeCliente = $dados->nomeCliente ?? NULL;
 ?>
 <div class="card">
     <h2 class="title">Adicionar produtos</h2>
-    <form name="formCadastro" action="?action=save&table=productsBudget" method="post" class="form">
+    <form name="formCadastro" action="?action=save&table=productsBudgets" method="post" class="form">
         <label for="id" class="form_label">ID:</label>
         <input type="text" class="form_input" name="id" id="id" value="<?= $id ?>" readonly />
 

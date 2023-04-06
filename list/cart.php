@@ -21,6 +21,7 @@ $id = $_GET["id"] ?? NULL;
             $nomeProduto = $dados->nome;
             $valor = $dados->valor;
             $quantidade = $dados->quantidade;
+            $idOrcamento = $dados->id;
             $valorFormatado = formatarValor($valor);
         ?>
             <tbody class="table_body">
@@ -33,4 +34,5 @@ $id = $_GET["id"] ?? NULL;
         }
         ?>
     </table>
+    <button type="button" onclick="registrar('productsBudgets', <?= $idOrcamento ?>)" class="categories_button">Novo produto</button>
 </div>

@@ -13,6 +13,9 @@ include "config/functions.php";
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Um sistema completo para gerenciar seus produtos e clientes" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, PHP e SQL" />
+    <meta name="author" content="Alisson Vincius">
     <title>Sistema de cadastro</title>
     <!-- arquivos css -->
     <link rel="stylesheet" href="styles/reset.css" />

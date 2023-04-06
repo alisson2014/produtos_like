@@ -7,16 +7,28 @@
         <br>
 
         <label for="cliente" class="form_label">Cliente</label>
-        <input class="form_input" type="text" id="cliente" name="cliente1" value="Cliente" readonly>
+        <input class="form_input" type="text" id="cliente" name="cliente1" value="" readonly>
 
         <br>
 
-        <label for="produto1" class="form_label">Escolha um produto:</label>
-        <select name="produto1" id="produto1" class="form_select">
+        <label for="produtos" class="form_label">Escolha um produto:</label>
+        <select name="produto1" id="produtos" class="form_select">
             <option value=""></option>
-            <option value="">Produto</option>
-            <option value="">Produto</option>
-            <option value="">Produto</option>
+            <?php
+            $sqlProdutos = "SELECT * FROM produto ORDER BY nome";
+            $consultaProdutos = $pdo->prepare($sqlProdutos);
+            $consultaProdutos->execute();
+
+            while ($dadosCategoria = $consultaProdutos->fetch(PDO::FETCH_OBJ)) {
+                $idProduto = $dadosCategoria->id;
+                $nomeProduto = $dadosCategoria->nome;
+            ?>
+                <option value="<?= $idProduto ?>">
+                    <?= $nomeProduto ?>
+                </option>
+            <?php
+            }
+            ?>
         </select>
 
         <br>

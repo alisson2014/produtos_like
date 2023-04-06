@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 -> Back-end:
 
 - PHP e SQL
-- phpMyAdmin (usado na gestão do banco)
+- phpMyAdmin (usado na gestão/criação do banco)
 
 ## 💻 Projeto
 
@@ -39,4 +39,8 @@ O projeto funciona da seguinte maneira:
 <br>
 -> O DELETE deleta normalmente quando o id recebido é igual ao do banco;
 <br>
-OBSERVAÇÕES: O cadastro de orçamentos ainda não esta funcionando corretamente!
+OBSERVAÇÕES: 
+<br>
+O cadastro de orçamentos ainda não esta funcionando corretamente!
+<br>
+O banco possui ids pulados, pois foram realizadas varias alterações no periodo de desenvolvimento!

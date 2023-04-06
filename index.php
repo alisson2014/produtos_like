@@ -29,9 +29,6 @@ include "config/functions.php";
 
 <body>
     <header class="header">
-        <a href="index.php" title="Home-Logo" class="link">
-            Logo
-        </a>
         <nav id="nav">
             <button aria-label="Abrir menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
                 <span id="hamburguer"></span>

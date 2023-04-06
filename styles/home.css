@@ -18,3 +18,22 @@
     flex-direction: column;
     gap: 4px;
 }
+
+@media screen and (max-width: 860px) {
+    .home {
+        width: 72%;
+        gap: 24px;
+    }
+
+    .home_title {
+        text-align: center;
+    }
+
+    .p {
+        font-size: 1.1rem;
+    }
+
+    .list {
+        gap: 8px;
+    }
+}

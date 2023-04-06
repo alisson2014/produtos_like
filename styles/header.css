@@ -4,8 +4,9 @@
 
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 8px;
 
     position: fixed;
     top: 0;
@@ -34,19 +35,23 @@
 
 #menu {
     list-style: none;
-    width: 40vw;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 @media screen and (max-width: 860px) {
+    .header {
+        justify-content: flex-end;
+    }
+
     #menu {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 3rem;
 
         position: absolute;
         width: 100%;
@@ -78,6 +83,11 @@
         border-radius: 0.4rem;
         background: #DDD;
         cursor: pointer;
+    }
+
+    .link {
+        font-size: 1.5rem;
+        font-weight: 500;
     }
 
     #hamburguer {

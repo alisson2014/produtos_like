@@ -24,6 +24,7 @@ include "config/functions.php";
     <link rel="stylesheet" href="styles/products.css" />
     <link rel="stylesheet" href="styles/form.css" />
     <link rel="stylesheet" href="styles/tables.css" />
+    <link rel="stylesheet" href="styles/home.css" />
 </head>
 
 <body>

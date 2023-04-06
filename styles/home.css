@@ -1,0 +1,20 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.p {
+    text-align: justify;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.list {
+    list-style: decimal-leading-zero;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}

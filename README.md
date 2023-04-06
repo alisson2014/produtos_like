@@ -29,7 +29,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O projeto funciona da seguinte maneira:
 -> É realizada uma conexão com o banco de dados com PDO, onde incluimos isso no index do projeto;
+<br>
 -> No index do PHP é feito uma validação que verifica se existe uma ação e tabela, caso existam é enviado para essa página, senão é renderizado uma pagina de erro (404);
+<br>
 -> O READ do CRUD é a action=list, que pode enviar para as varias tabelas do projeto;
+<br>
 -> O CREATE e UPDATE ficam na action=register que verifica se existe um id, caso não exista inserimos algo novo no banco, senão realizamos um UPDATE;
+<br>
 -> O DELETE deleta normalmente quando o id recebido é igual ao do banco;

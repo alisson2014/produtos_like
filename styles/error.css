@@ -12,6 +12,9 @@
 }
 
 .error_button {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #151515;
     padding: 16px 32px;
     border: none;
     border-radius: 10px;
@@ -24,12 +27,6 @@
     letter-spacing: 2px;
 }
 
-.error_button a {
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: #151515;
-}
 
 @media screen and (max-width: 860px) {
     .error_img {

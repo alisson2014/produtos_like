@@ -20,7 +20,7 @@
             ?>
                 <tr class="row">
                     <td class="col">
-                        <p><?= $nome ?></p>
+                        <?= $nome ?>
                     </td>
                     <td class="col buttons">
                         <button type="button" onclick="registrar('subcategories', <?= $id ?>)">Editar</button>

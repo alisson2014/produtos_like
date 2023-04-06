@@ -22,7 +22,7 @@
             ?>
                 <tr class="row">
                     <td class="col">
-                        <p><?= $nomeCliente ?></p>
+                        <?= $nomeCliente ?>
                     </td>
                     <td class="col"><?= $data ?></td>
                     <td class="col buttons">

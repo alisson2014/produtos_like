@@ -1,4 +1,7 @@
 <?php
+if (!$_POST)
+    mensagem("Erro Requisiçã inválida");
+
 $id = trim($_POST["id"] ?? NULL);
 $nomeCliente = trim($_POST["cliente"] ?? NULL);
 $data = trim($_POST["data"] ?? NULL);

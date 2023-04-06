@@ -22,21 +22,15 @@ $categorias_id = $dados->subcategoria ?? NULL;
     <h2 class="title">Cadastrar produto</h2>
     <form name="formCadastro" action="?action=save&table=products" method="post" class="form">
         <label for="id" class="form_label">ID:</label>
-        <input type="text" class="form_input" name="id" id="id" value="<?= $id ?>" readonly>
-
-        <br>
-
-        <label for="produto" class="form_label">Digite o nome do Produto: </label>
-        <input type="text" class="form_input" placeholder="Digite o nome do produto" name="produto" id="produto" value="<?= $produto ?>" required>
-
-        <br>
-
-        <label for="valor" class="form_label">Digite o valor do Produto: </label>
-        <input type="text" class="form_input" placeholder="Digite o valor do produto" name="valor" id="valor" value="<?= $valor ?>" required>
-
-        <br>
-
-        <label for="categorias" class="form_label">Categoria: </label>
+        <input type="text" class="form_input" name="id" id="id" value="<?= $id ?>" readonly />
+        <br />
+        <label for="produto" class="form_label">Nome do produto </label>
+        <input type="text" class="form_input" placeholder="Digite o nome do produto" name="produto" id="produto" minlength="3" maxlength="45" value="<?= $produto ?>" required />
+        <br />
+        <label for="valor" class="form_label">Valor do Produto </label>
+        <input type="number" class="form_input" placeholder="Digite o valor do produto" name="valor" min="0" max="10000000" step=".01" id="valor" value="<?= $valor ?>" required />
+        <br />
+        <label for="categorias_id" class="form_label">Categoria </label>
         <select name="categorias_id" id="categorias_id" class="form_select" required>
             <option value=""></option>
             <?php

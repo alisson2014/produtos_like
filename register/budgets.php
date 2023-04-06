@@ -21,19 +21,13 @@ $data = $dados->data ?? NULL;
     <form name="formCadastro" action="?action=save&table=budgets" method="post" class="form">
         <label for="id" class="form_label">ID:</label>
         <input type="text" class="form_input" name="id" id="id" value="<?= $id ?>" readonly />
-
-        <br>
-
+        <br />
         <label for="cliente" class="form_label">Digite o nome do cliente: </label>
-        <input type="text" class="form_input" placeholder="Digite o nome do cliente" name="cliente" id="cliente" value="<?= $nomeCliente ?>" required />
-
-        <br>
-
+        <input type="text" class="form_input" placeholder="Digite o nome do cliente" name="cliente" id="cliente" minlength="3" maxlength="45" value="<?= $nomeCliente ?>" required />
+        <br />
         <label for="data" class="form_label">Digite a data do orçamento: </label>
         <input class="form_select" type="date" id="data" name="data" value="<?= $data ?>" required />
-
-        <br>
-
+        <br />
         <button type="submit" class="form_button">
             Salvar Dados
         </button>

@@ -1,0 +1,48 @@
+.table,
+.table_body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.row {
+    width: 780px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table_head .row .col {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.table_body .row {
+    padding-bottom: 10px;
+    border-bottom: 2.2px solid #787878;
+}
+
+.table_body .row .col {
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+.table_body .row .col button {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.table_body .row .col button:hover {
+    transform: scale(1.01);
+    letter-spacing: 1.2px;
+}
+
+.col.buttons {
+    display: flex;
+    gap: 16px;
+}

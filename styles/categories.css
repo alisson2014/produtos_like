@@ -6,19 +6,6 @@
     gap: 32px;
 }
 
-.categories_list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.categories {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 128px;
-}
-
 .categories_button {
     font-size: 1.5rem;
     font-weight: 300;
@@ -30,47 +17,7 @@
     transition: all .3s linear;
 }
 
-.categories_button a {
-    text-decoration: none;
-    color: #181818;
-}
-
 .categories_button:hover {
     transform: scaleY(1.02);
     letter-spacing: 1.5px;
-}
-
-.categorie {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.categorie p {
-    font-size: 1.25rem;
-    font-weight: 500;
-}
-
-.buttons {
-    display: flex;
-    gap: 16px;
-}
-
-.buttons button {
-    font-size: 1.3rem;
-    font-weight: 300;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all .3s ease-in;
-}
-
-.buttons button a {
-    text-decoration: none;
-}
-
-.buttons button:hover {
-    transform: scale(1.01);
-    letter-spacing: 1.2px;
 }

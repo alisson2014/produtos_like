@@ -23,6 +23,7 @@ include "config/functions.php";
     <link rel="stylesheet" href="styles/categories.css" />
     <link rel="stylesheet" href="styles/products.css" />
     <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/tables.css" />
 </head>
 
 <body>

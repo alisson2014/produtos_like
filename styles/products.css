@@ -1,25 +1,8 @@
 .products_page {
+    padding: 140px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 32px;
-}
-
-.products_list {
-    display: flex;
-    flex-direction: column;
     gap: 16px;
-}
-
-.products {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 128px;
-}
-
-.product p {
-    font-size: 1.25rem;
-    font-weight: 500;
 }

@@ -20,11 +20,12 @@
             $produto = $dados->nome;
             $valor = $dados->valor;
             $id = $dados->id;
+            $valorFormatado = formatarValor($valor);
         ?>
             <tbody class="table_body">
                 <tr class="row">
                     <td class="col"><?= $produto ?></td>
-                    <td class="col"><?= $valor ?></td>
+                    <td class="col"><?= $valorFormatado ?></td>
                     <td class="col"><?= $nomeCategoria ?></td>
                     <td class="col buttons">
                         <button type="button" onclick="registrar('products', <?= $id ?>)">Editar</button>

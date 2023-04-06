@@ -9,3 +9,8 @@ function mensagem(string $msg): void
     ";
     exit;
 }
+
+function formatarValor(float $valor): string
+{
+    return str_replace(".", ",", $valor);
+}

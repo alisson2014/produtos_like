@@ -19,12 +19,13 @@
                 $nomeCliente = $dados->nomeCliente;
                 $data = $dados->data;
                 $id = $dados->id;
+                $data_formatada = date("d/m/Y", strtotime($data));
             ?>
                 <tr class="row">
                     <td class="col">
                         <?= $nomeCliente ?>
                     </td>
-                    <td class="col"><?= $data ?></td>
+                    <td class="col"><?= $data_formatada ?></td>
                     <td class="col buttons">
                         <button type="button" onclick="registrar('budgets', <?= $id ?>)">Editar</button>
                         <button type="button" onclick="excluir('budgets', <?= $id ?>)">Excluir</button>

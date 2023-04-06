@@ -53,6 +53,11 @@ include "config/functions.php";
                 </li>
                 <li>
                     <a href="index.php?action=list&table=budgets" class="link" title="Pagina de orçamento">
+                        Cliente
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?action=list&table=productsBudget" class="link" title="Pagina de orçamento de produto">
                         Orçamento
                     </a>
                 </li>

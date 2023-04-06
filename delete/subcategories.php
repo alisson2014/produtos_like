@@ -8,7 +8,6 @@ if (empty($id)) {
 
 $id = (int)$id;
 
-//verificar se existe um produto cadastrado com esta categoria
 $sqlCategoria = "SELECT id FROM subcategoria WHERE id = '{$id}' LIMIT 1";
 $consultaCategoria = $pdo->prepare($sqlCategoria);
 $consultaCategoria->execute();

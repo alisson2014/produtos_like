@@ -8,18 +8,18 @@ if (empty($id)) {
 
 $id = (int)$id;
 
-$sqlProdutos = "SELECT id FROM produto WHERE id = '{$id}' LIMIT 1";
-$consultaProdutos = $pdo->prepare($sqlProdutos);
-$consultaProdutos->execute();
+$sqlOrcamentos = "SELECT id FROM orcamento WHERE id = '{$id}' LIMIT 1";
+$consultaOrcamento = $pdo->prepare($sqlOrcamentos);
+$consultaOrcamento->execute();
 
-$dados = $consultaProdutos->fetch(PDO::FETCH_OBJ);
+$dados = $consultaOrcamento->fetch(PDO::FETCH_OBJ);
 
 if (empty($dados->id)) {
     mensagem("Erro, esta categoria não pode ser excluída pois existe um produto utilizando o registro");
 }
 
 //excluir o registro
-$sqlExcluir = "DELETE FROM produto WHERE id = '{$id}' LIMIT 1";
+$sqlExcluir = "DELETE FROM orcamento WHERE id = '{$id}' LIMIT 1";
 $consultaExcluir = $pdo->prepare($sqlExcluir);
 
 if ($consultaExcluir->execute()) {

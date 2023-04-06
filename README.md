@@ -28,6 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 💻 Projeto
 
 O projeto funciona da seguinte maneira:
+<br>
 -> É realizada uma conexão com o banco de dados com PDO, onde incluimos isso no index do projeto;
 <br>
 -> No index do PHP é feito uma validação que verifica se existe uma ação e tabela, caso existam é enviado para essa página, senão é renderizado uma pagina de erro (404);

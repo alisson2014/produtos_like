@@ -33,9 +33,7 @@
         }
         ?>
     </div>
-    <button type="button" class="categories_button">
-        <a href="index.php?action=register&table=products">
-            Novo produto
-        </a>
+    <button type="button" onclick="registrar('products')" class="categories_button">
+        Novo produto
     </button>
 </div>

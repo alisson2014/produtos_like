@@ -25,9 +25,7 @@
         }
         ?>
     </div>
-    <button type="button" class="categories_button">
-        <a href="index.php?action=register&table=subcategories">
-            Nova categoria
-        </a>
+    <button type="button" onclick="registrar('subcategories')" class="categories_button">
+        Nova categoria
     </button>
 </div>

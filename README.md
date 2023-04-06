@@ -38,3 +38,5 @@ O projeto funciona da seguinte maneira:
 -> O CREATE e UPDATE ficam na action=register que verifica se existe um id, caso não exista inserimos algo novo no banco, senão realizamos um UPDATE;
 <br>
 -> O DELETE deleta normalmente quando o id recebido é igual ao do banco;
+<br>
+OBSERVAÇÕES: O cadastro de orçamentos ainda não esta funcionando corretamente!

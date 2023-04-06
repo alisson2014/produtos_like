@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Abr-2023 às 20:19
+-- Tempo de geração: 07-Abr-2023 às 01:17
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -33,6 +33,15 @@ CREATE TABLE `orcamento` (
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `orcamento`
+--
+
+INSERT INTO `orcamento` (`id`, `nomeCliente`, `data`) VALUES
+(1, 'João', '2023-04-06'),
+(5, 'Anderson', '2022-06-15'),
+(6, 'Thomas', '2023-04-05');
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +55,20 @@ CREATE TABLE `produto` (
   `subcategoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`id`, `nome`, `valor`, `subcategoria`) VALUES
+(1, 'IPHONE 14', '5100.59', 15),
+(2, 'IPHONE 13', '3800.55', 15),
+(3, 'Playstation 4', '3250.80', 2),
+(5, 'Playstation 5', '4300.54', 2),
+(15, 'Geladeira consul inverter', '3100.00', 35),
+(16, 'Lavadora eletrolux', '2450.55', 35),
+(17, 'TV AOC', '1690.99', 34),
+(18, 'TV LG', '2400.50', 34);
+
 -- --------------------------------------------------------
 
 --
@@ -57,6 +80,15 @@ CREATE TABLE `produtosorcamento` (
   `orcamento` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `produtosorcamento`
+--
+
+INSERT INTO `produtosorcamento` (`produto`, `orcamento`, `quantidade`) VALUES
+(1, 1, 2),
+(2, 5, 1),
+(5, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -74,9 +106,10 @@ CREATE TABLE `subcategoria` (
 --
 
 INSERT INTO `subcategoria` (`id`, `nome`) VALUES
-(1, 'Saúde'),
 (2, 'Eletrônico'),
-(3, 'Brinquedos');
+(15, 'Smartphones'),
+(34, 'Televisões'),
+(35, 'Eletrodoméstico');
 
 --
 -- Índices para tabelas despejadas
@@ -116,19 +149,19 @@ ALTER TABLE `subcategoria`
 -- AUTO_INCREMENT de tabela `orcamento`
 --
 ALTER TABLE `orcamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `subcategoria`
 --
 ALTER TABLE `subcategoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Restrições para despejos de tabelas

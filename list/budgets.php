@@ -1,5 +1,5 @@
 <div class="budgets">
-    <h2 class="title">Orçamentos</h2>
+    <h2 class="title">Clientes</h2>
     <?php
     $sqlOrcamentos = "SELECT * FROM orcamento ORDER BY data DESC";
     $consultaOrcamento = $pdo->prepare($sqlOrcamentos);
@@ -9,7 +9,6 @@
         <thead class="table_head">
             <tr class="row">
                 <td class="col">Cliente</td>
-                <td class="col">Data</td>
                 <td class="col actions">Ações</td>
             </tr>
         </thead>
@@ -17,15 +16,12 @@
             <?php
             while ($dados = $consultaOrcamento->fetch(PDO::FETCH_OBJ)) {
                 $nomeCliente = $dados->nomeCliente;
-                $data = $dados->data;
                 $id = $dados->id;
-                $data_formatada = date("d/m/Y", strtotime($data));
             ?>
                 <tr class="row">
                     <td class="col">
                         <?= $nomeCliente ?>
                     </td>
-                    <td class="col"><?= $data_formatada ?></td>
                     <td class="col buttons">
                         <button type="button" onclick="registrar('budgets', <?= $id ?>)">Editar</button>
                         <button type="button" onclick="excluir('budgets', <?= $id ?>)">Excluir</button>
@@ -37,6 +33,6 @@
         </tbody>
     </table>
     <button type="button" onclick="registrar('budgets')" class="categories_button">
-        Novo orçamento
+        Novo cliente
     </button>
 </div>

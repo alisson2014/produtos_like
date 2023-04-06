@@ -1,18 +1,35 @@
+<?php
+$id = $_GET["id"] ?? NULL;
+
+if (!empty($id)) {
+    $id = (int)$id;
+    $sqlOrcamento = "SELECT * FROM orcamento
+        WHERE id = '{$id}' LIMIT 1";
+    $consultaOrcamento = $pdo->prepare($sqlOrcamento);
+    $consultaOrcamento->execute();
+
+    //recuperar os dados do sql
+    $dados = $consultaOrcamento->fetch(PDO::FETCH_OBJ);
+}
+
+$id = $dados->id ?? NULL;
+$nomeCliente = $dados->nomeCliente ?? NULL;
+?>
 <div class="card">
     <h2 class="title">Adicionar produtos</h2>
     <form name="formCadastro" action="?action=save&table=productsBudget" method="post" class="form">
         <label for="id" class="form_label">ID:</label>
-        <input type="text" class="form_input" name="id" id="id" value="" readonly />
+        <input type="text" class="form_input" name="id" id="id" value="<?= $id ?>" readonly />
 
         <br>
 
         <label for="cliente" class="form_label">Cliente</label>
-        <input class="form_input" type="text" id="cliente" name="cliente1" value="" readonly>
+        <input class="form_input" type="text" id="cliente" name="cliente1" value="<?= $nomeCliente ?>" readonly>
 
         <br>
 
         <label for="produtos" class="form_label">Escolha um produto:</label>
-        <select name="produto1" id="produtos" class="form_select">
+        <select name="produtos" id="produtos" class="form_select">
             <option value=""></option>
             <?php
             $sqlProdutos = "SELECT * FROM produto ORDER BY nome";
@@ -34,7 +51,7 @@
         <br>
 
         <label for="quantidade" class="form_label">Quantidade:</label>
-        <input type="number" min="1" class="form_select" />
+        <input type="number" id="quntidade" name="quantidade" min="1" class="form_select" />
 
         <br>
 

@@ -1,7 +1,7 @@
 <div class="card">
     <h2 class="title">Orçamento de produto</h2>
     <?php
-    $sqlOrcamentos = "SELECT * FROM orcamento ORDER BY data";
+    $sqlOrcamentos = "SELECT *,SUM(p.valor * po.quantidade) as total FROM orcamento as o JOIN produtosorcamento as po ON po.orcamento = o.id JOIN produto as p ON p.id = po.produto GROUP BY o.id";
     $consultaOrcamentos = $pdo->prepare($sqlOrcamentos);
     $consultaOrcamentos->execute();
     ?>
@@ -18,6 +18,7 @@
         while ($dados = $consultaOrcamentos->fetch(PDO::FETCH_OBJ)) {
             $nomeCliente = $dados->nomeCliente;
             $data = $dados->data;
+            $total = $dados->total;
             $id = $dados->id;
             $data = date("d/m/Y", strtotime($data));
         ?>
@@ -25,17 +26,15 @@
                 <tr class="row">
                     <td class="col"><?= $nomeCliente ?></td>
                     <td class="col"><?= $data ?></td>
-                    <td class="col">valores</td>
+                    <td class="col"><?= $total ?></td>
                     <td class="col buttons">
-                        <button type="button" onclick="registrar('productsBudgets', <?= $id ?>)">Editar</button>
-                        <button type="button" onclick="excluir('productsBudgets', <?= $id ?>)">Excluir</button>
+                        <button type="button">
+                            <a href="index.php?action=list&table=cart&id=<?= $id ?>">Editar</a>
+                        </button>
                     </td>
             </tbody>
         <?php
         }
         ?>
     </table>
-    <button type="button" onclick="registrar('productsBudget')" class="categories_button">
-        Novos produtos
-    </button>
 </div>

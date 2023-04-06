@@ -17,7 +17,7 @@ $data = $dados->data ?? NULL;
 ?>
 
 <div class="card">
-    <h2 class="title">Cadastrar orçamento</h2>
+    <h2 class="title">Cadastrar clientes</h2>
     <form name="formCadastro" action="?action=save&table=budgets" method="post" class="form">
         <label for="id" class="form_label">ID:</label>
         <input type="text" class="form_input" name="id" id="id" value="<?= $id ?>" readonly />

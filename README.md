@@ -44,3 +44,13 @@ OBSERVAÇÕES:
 O cadastro de orçamentos ainda não esta funcionando corretamente!
 <br>
 O banco possui ids pulados, pois foram realizadas varias alterações no periodo de desenvolvimento!
+
+##  Rodando usando docker
+
+Executar o seguinte comando no shell.
+
+```shell
+docker compose up -d
+```
+
+Depois abrir http://127.0.0.1:8080/

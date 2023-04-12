@@ -1,0 +1,50 @@
+version: '3.5'
+networks:
+  php:
+    name: php
+    driver: bridge
+
+services:
+
+  php:
+    image: likesistemas/php-dev:8.1
+    environment:
+      - DB_HOST=mysql
+      - SHOW_ERRORS=true
+    volumes:
+      - ./:/var/www/public/
+    networks:
+      - php
+    links:
+      - mysql
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mariadb:10.4.12
+    volumes:
+      - ./.data/:/var/lib/mysql
+      - ./_arquivos/:/docker-entrypoint-initdb.d/
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=produtos-like
+    networks:
+      - php
+
+  nginx:
+    image: likesistemas/nginx:latest
+    restart: on-failure
+    environment:
+      - HOST_PHP=php
+      - PORTA_PHP=9000
+      - INDEX_FILE=index.php
+    ports:
+      - 8080:80
+    volumes:
+      - ./:/var/www/public/
+    links:
+      - php
+    depends_on:
+      - php
+    networks:
+      - php

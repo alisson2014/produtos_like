@@ -1,17 +1,17 @@
 <?php
+
+use CRUD_PHP\Action\Service\Consult;
+
 $id = $_GET["id"] ?? NULL;
 
 if (!empty($id)) {
     $id = (int)$id;
-    $sqlCategoria = "SELECT * FROM subcategoria WHERE id = '{$id}'";
-    $consultaCategoria = $pdo->prepare($sqlCategoria);
-    $consultaCategoria->execute();
-
-    $dados = $consultaCategoria->fetch(PDO::FETCH_OBJ);
+    $consult = new Consult("SELECT * FROM subcategoria WHERE id = '{$id}'");
+    $dados = $consult->sqlConsult($pdo);
 }
 
-$id = $dados->id ?? NULL;
-$categoria = $dados->nome ?? NULL;
+$id = $dados[0]->id ?? NULL;
+$nome = $dados[0]->nome ?? NULL;
 
 ?>
 
@@ -22,7 +22,7 @@ $categoria = $dados->nome ?? NULL;
         <input type="text" class="form_input" name="id" id="id" value="<?= $id ?>" readonly />
         <br />
         <label for="categorie" class="form_label">Categoria</label>
-        <input type="text" class="form_input" placeholder="Digite o nome da categoria" name="subcategoria" id="categorie" value="<?= $categoria ?>" minlength="3" maxlength="50" required />
+        <input type="text" class="form_input" placeholder="Digite o nome da categoria" name="subcategoria" id="categorie" value="<?= $nome ?>" minlength="3" maxlength="50" required />
         <br />
         <button type="submit" class="form_button">
             Salvar Dados

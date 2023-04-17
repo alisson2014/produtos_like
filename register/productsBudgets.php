@@ -1,19 +1,18 @@
 <?php
+
+use CRUD_PHP\Action\Service\Consult;
+
 $id = $_GET["id"] ?? NULL;
 
 if (!empty($id)) {
     $id = (int)$id;
-    $sqlOrcamento = "SELECT * FROM orcamento
-        WHERE id = '{$id}' LIMIT 1";
-    $consultaOrcamento = $pdo->prepare($sqlOrcamento);
-    $consultaOrcamento->execute();
-
-    //recuperar os dados do sql
-    $dados = $consultaOrcamento->fetch(PDO::FETCH_OBJ);
+    $consult = new Consult("SELECT * FROM orcamento
+    WHERE id = '{$id}' LIMIT 1");
+    $dados = $consult->sqlConsult($pdo);
 }
 
-$id = $dados->id ?? NULL;
-$nomeCliente = $dados->nomeCliente ?? NULL;
+$id = $dados[0]->id ?? NULL;
+$nomeCliente = $dados[0]->nomeCliente ?? NULL;
 ?>
 <div class="card">
     <h2 class="title">Adicionar produtos</h2>

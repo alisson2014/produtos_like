@@ -1,21 +1,20 @@
 <?php
+
+use CRUD_PHP\Action\Service\Consult;
+
 $id = $_GET["id"] ?? NULL;
 
 if (!empty($id)) {
     $id = (int)$id;
-    $sqlProduto = "SELECT * FROM produto
-        WHERE id = '{$id}' LIMIT 1";
-    $consultaProduto = $pdo->prepare($sqlProduto);
-    $consultaProduto->execute();
-
-    //recuperar os dados do sql
-    $dados = $consultaProduto->fetch(PDO::FETCH_OBJ);
+    $consult = new Consult("SELECT * FROM produto
+    WHERE id = '{$id}' LIMIT 1");
+    $dados = $consult->sqlConsult($pdo);
 }
 
-$id = $dados->id ?? NULL;
-$produto = $dados->nome ?? NULL;
-$valor = $dados->valor ?? NULL;
-$categorias_id = $dados->subcategoria ?? NULL;
+$id = $dados[0]->id ?? NULL;
+$produto = $dados[0]->nome ?? NULL;
+$valor = $dados[0]->valor ?? NULL;
+$categorias_id = $dados[0]->subcategoria ?? NULL;
 ?>
 
 <div class="card">

@@ -1,10 +1,8 @@
 <?php
 
-use CRUD_PHP\Action\Model\Lister\ListSubcategories;
+use CRUD_PHP\Action\Model\Consult\Consult;
 
-$teste = new ListSubcategories("SELECT * FROM subcategoria");
-
-$consult = $teste->sqlConsult($pdo);
+$consultSucategories = new Consult("SELECT * FROM subcategoria");
 
 ?>
 <div class="subcategories">
@@ -18,6 +16,8 @@ $consult = $teste->sqlConsult($pdo);
         </thead>
         <tbody class="table_body">
             <?php
+            $consult = $consultSucategories->sqlConsult($pdo);
+
             foreach ($consult as $item) {
                 $nome = $item->nome;
                 $id = $item->id;

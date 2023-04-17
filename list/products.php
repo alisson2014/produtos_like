@@ -1,10 +1,11 @@
+<?php
+
+use CRUD_PHP\Action\Model\Consult\Consult;
+
+$consultProducts = new Consult("SELECT p.*,s.nome as nomeCategoria FROM produto as p JOIN subcategoria as s ON s.id = p.subcategoria");
+?>
 <div class="products_page">
     <h2 class="title">Produtos</h2>
-    <?php
-    $sqlProdutos = "SELECT p.*,s.nome as nomeCategoria FROM produto as p JOIN subcategoria as s ON s.id = p.subcategoria";
-    $consultaProdutos = $pdo->prepare($sqlProdutos);
-    $consultaProdutos->execute();
-    ?>
     <table class="table">
         <thead class="table_head">
             <tr class="row">
@@ -15,11 +16,12 @@
             </tr>
         </thead>
         <?php
-        while ($dados = $consultaProdutos->fetch(PDO::FETCH_OBJ)) {
-            $nomeCategoria = $dados->nomeCategoria;
-            $produto = $dados->nome;
-            $valor = $dados->valor;
-            $id = $dados->id;
+        $consult = $consultProducts->sqlConsult($pdo);
+        foreach ($consult as $item) {
+            $nomeCategoria = $item->nomeCategoria;
+            $produto = $item->nome;
+            $valor = $item->valor;
+            $id = $item->id;
             $valorFormatado = formatarValor($valor);
         ?>
             <tbody class="table_body">

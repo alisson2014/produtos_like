@@ -1,10 +1,11 @@
+<?php
+
+use CRUD_PHP\Action\Model\Consult\Consult;
+
+$consultClients = new Consult("SELECT * FROM orcamento ORDER BY data DESC");
+?>
 <div class="budgets">
     <h2 class="title">Clientes</h2>
-    <?php
-    $sqlOrcamentos = "SELECT * FROM orcamento ORDER BY data DESC";
-    $consultaOrcamento = $pdo->prepare($sqlOrcamentos);
-    $consultaOrcamento->execute();
-    ?>
     <table class="table">
         <thead class="table_head">
             <tr class="row">
@@ -14,9 +15,10 @@
         </thead>
         <tbody class="table_body">
             <?php
-            while ($dados = $consultaOrcamento->fetch(PDO::FETCH_OBJ)) {
-                $nomeCliente = $dados->nomeCliente;
-                $id = $dados->id;
+            $consult = $consultClients->sqlConsult($pdo);
+            foreach ($consult as $item) {
+                $nomeCliente = $item->nomeCliente;
+                $id = $item->id;
             ?>
                 <tr class="row">
                     <td class="col">

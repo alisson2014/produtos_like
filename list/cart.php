@@ -1,13 +1,12 @@
 <?php
 $id = $_GET["id"] ?? NULL;
+
+use CRUD_PHP\Action\Model\Consult\Consult;
+
+$consultCart = new Consult("SELECT p.id as idProduto, p.nome, p.valor, o.*, po.quantidade FROM produtosorcamento as po JOIN orcamento as o ON o.id = po.orcamento JOIN produto as p ON p.id = po.produto WHERE o.id = '{$id}'");
 ?>
 <div class="cart">
     <h2 class="title">Carrinho</h2>
-    <?php
-    $sqlCarrinho = "SELECT p.id as idProduto, p.nome, p.valor, o.*, po.quantidade FROM produtosorcamento as po JOIN orcamento as o ON o.id = po.orcamento JOIN produto as p ON p.id = po.produto WHERE o.id = '{$id}'";
-    $consultaCarrinho = $pdo->prepare($sqlCarrinho);
-    $consultaCarrinho->execute();
-    ?>
     <table class="table">
         <thead class="table_head">
             <tr class="row">
@@ -17,11 +16,12 @@ $id = $_GET["id"] ?? NULL;
             </tr>
         </thead>
         <?php
-        while ($dados = $consultaCarrinho->fetch(PDO::FETCH_OBJ)) {
-            $nomeProduto = $dados->nome;
-            $valor = $dados->valor;
-            $quantidade = $dados->quantidade;
-            $idOrcamento = $dados->id;
+        $consult = $consultCart->sqlConsult($pdo);
+        foreach ($consult as $item) {
+            $nomeProduto = $item->nome;
+            $valor = $item->valor;
+            $quantidade = $item->quantidade;
+            $idOrcamento = $item->id;
             $valorFormatado = formatarValor($valor);
         ?>
             <tbody class="table_body">

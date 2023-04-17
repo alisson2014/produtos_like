@@ -1,3 +1,12 @@
+<?php
+
+use CRUD_PHP\Action\Model\Lister\ListSubcategories;
+
+$teste = new ListSubcategories("SELECT * FROM subcategoria");
+
+echo var_dump($teste->sqlConsult($pdo));
+
+?>
 <div class="subcategories">
     <h2 class="title">Subcategorias</h2>
     <?php

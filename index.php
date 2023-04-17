@@ -1,6 +1,7 @@
 <?php
 include "config/config.php";
 include "config/functions.php";
+require_once "autoload.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

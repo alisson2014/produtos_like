@@ -1,5 +1,7 @@
 <?php
-//recuperar o id
+
+use CRUD_PHP\Action\Service\{Consult, Delete};
+
 $id = $_GET["id"] ?? NULL;
 
 if (empty($id)) {
@@ -7,23 +9,13 @@ if (empty($id)) {
 }
 
 $id = (int)$id;
+$consult = new Consult("SELECT id FROM subcategoria WHERE id = '{$id}' LIMIT 1");
+$dados = $consult->sqlConsult($pdo);
 
-$sqlCategoria = "SELECT id FROM subcategoria WHERE id = '{$id}' LIMIT 1";
-$consultaCategoria = $pdo->prepare($sqlCategoria);
-$consultaCategoria->execute();
-
-$dados = $consultaCategoria->fetch(PDO::FETCH_OBJ);
-
-if (empty($dados->id)) {
+if (empty($dados[0]->id)) {
     mensagem("Erro, nenhuma categoria encontrada!");
 }
 
-//excluir o registro
-$sqlExcluir = "DELETE FROM subcategoria WHERE id = '{$id}' LIMIT 1";
-$consultaExcluir = $pdo->prepare($sqlExcluir);
 
-if ($consultaExcluir->execute()) {
-    mensagem("Sucesso, registro excluído com sucesso");
-} else {
-    mensagem("Erro, erro ao tentar excluir o registro");
-}
+$delete = new Delete("DELETE FROM subcategoria WHERE id = '{$id}' LIMIT 1");
+$delete->delete($pdo);

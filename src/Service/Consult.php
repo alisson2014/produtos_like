@@ -6,7 +6,7 @@ use PDO;
 
 final class Consult
 {
-    protected readonly string $sqlQuery;
+    private readonly string $sqlQuery;
 
     public function __construct(
         string $sqlQuery

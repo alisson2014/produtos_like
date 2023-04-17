@@ -1,5 +1,7 @@
 <?php
-//recuperar o id
+
+use CRUD_PHP\Action\Service\{Consult, Delete};
+
 $id = $_GET["id"] ?? NULL;
 
 if (empty($id)) {
@@ -8,22 +10,13 @@ if (empty($id)) {
 
 $id = (int)$id;
 
-$sqlProdutos = "SELECT id FROM produto WHERE id = '{$id}' LIMIT 1";
-$consultaProdutos = $pdo->prepare($sqlProdutos);
-$consultaProdutos->execute();
+$consult = new Consult("SELECT id FROM produto WHERE id = '{$id}' LIMIT 1");
+$dados = $consult->sqlConsult($pdo);
 
-$dados = $consultaProdutos->fetch(PDO::FETCH_OBJ);
-
-if (empty($dados->id)) {
+if (empty($dados[0]->id)) {
     mensagem("Erro, esta categoria não pode ser excluída pois existe um produto utilizando o registro");
 }
 
-//excluir o registro
-$sqlExcluir = "DELETE FROM produto WHERE id = '{$id}' LIMIT 1";
-$consultaExcluir = $pdo->prepare($sqlExcluir);
 
-if ($consultaExcluir->execute()) {
-    mensagem("Sucesso, registro excluído com sucesso");
-} else {
-    mensagem("Erro, erro ao tentar excluir o registro");
-}
+$delete = new Delete("DELETE FROM produto WHERE id = {$id} LIMIT 1");
+$delete->delete($pdo);

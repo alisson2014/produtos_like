@@ -4,16 +4,11 @@ use CRUD_PHP\Action\Model\Lister\ListSubcategories;
 
 $teste = new ListSubcategories("SELECT * FROM subcategoria");
 
-echo var_dump($teste->sqlConsult($pdo));
+$consult = $teste->sqlConsult($pdo);
 
 ?>
 <div class="subcategories">
     <h2 class="title">Subcategorias</h2>
-    <?php
-    $sqlCategorias = "SELECT * FROM subcategoria";
-    $consultaCategorias = $pdo->prepare($sqlCategorias);
-    $consultaCategorias->execute();
-    ?>
     <table class="table">
         <thead class="table_head">
             <tr class="row">
@@ -23,9 +18,9 @@ echo var_dump($teste->sqlConsult($pdo));
         </thead>
         <tbody class="table_body">
             <?php
-            while ($dados = $consultaCategorias->fetch(PDO::FETCH_OBJ)) {
-                $nome = $dados->nome;
-                $id = $dados->id;
+            foreach ($consult as $item) {
+                $nome = $item->nome;
+                $id = $item->id;
             ?>
                 <tr class="row">
                     <td class="col">

@@ -1,6 +1,6 @@
 <?php
 
-use CRUD_PHP\Action\Model\Consult\Consult;
+use CRUD_PHP\Action\Service\Consult;
 
 $consultProducts = new Consult("SELECT p.*,s.nome as nomeCategoria FROM produto as p JOIN subcategoria as s ON s.id = p.subcategoria");
 ?>

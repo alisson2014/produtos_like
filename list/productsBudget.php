@@ -1,6 +1,6 @@
 <?php
 
-use CRUD_PHP\Action\Model\Consult\Consult;
+use CRUD_PHP\Action\Service\Consult;
 
 $consultBudgets = new Consult("SELECT o.id AS idOrcamento, o.nomeCliente AS nomeCliente, o.data AS data, p.id AS idProduto, p.nome AS nomeProduto, p.valor AS valorProduto, SUM(p.valor * po.quantidade) as total FROM orcamento as o JOIN produtosorcamento as po ON po.orcamento = o.id JOIN produto as p ON p.id = po.produto GROUP BY o.id");
 ?>

@@ -1,7 +1,8 @@
 <?php
-$id = $_GET["id"] ?? NULL;
 
-use CRUD_PHP\Action\Model\Consult\Consult;
+use CRUD_PHP\Action\Service\Consult;
+
+$id = $_GET["id"] ?? NULL;
 
 $consultCart = new Consult("SELECT p.id as idProduto, p.nome, p.valor, o.*, po.quantidade FROM produtosorcamento as po JOIN orcamento as o ON o.id = po.orcamento JOIN produto as p ON p.id = po.produto WHERE o.id = '{$id}'");
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-use CRUD_PHP\Action\Model\Consult\Consult;
+use CRUD_PHP\Action\Service\Consult;
 
 $consultClients = new Consult("SELECT * FROM orcamento ORDER BY data DESC");
 ?>

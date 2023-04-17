@@ -1,6 +1,6 @@
 <?php
 
-use CRUD_PHP\Action\Model\Consult\Consult;
+use CRUD_PHP\Action\Service\Consult;
 
 $consultSucategories = new Consult("SELECT * FROM subcategoria");
 

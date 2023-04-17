@@ -1,12 +1,12 @@
 <?php
 
-namespace CRUD_PHP\Action\Model\Consult;
+namespace CRUD_PHP\Action\Service;
 
 use PDO;
 
 final class Consult
 {
-    protected string $sqlQuery;
+    protected readonly string $sqlQuery;
 
     public function __construct(
         string $sqlQuery

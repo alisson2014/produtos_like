@@ -29,6 +29,11 @@ require_once "autoload.php";
     <link rel="stylesheet" href="styles/form.css" />
     <link rel="stylesheet" href="styles/tables.css" />
     <link rel="stylesheet" href="styles/home.css" />
+    <!-- arquivos js -->
+    <script type="text/javascript" src="js/navbar.js" defer></script>
+    <script type="text/javascript" src="js/excluir.js" defer></script>
+    <script type="text/javascript" src="js/registrar.js" defer></script>
+    <script type="text/javascript" src="js/voltar.js" defer></script>
 </head>
 
 <body>
@@ -89,12 +94,6 @@ require_once "autoload.php";
         </div>
         <i class="footer_development">Desenvolvido por alisson</i>
     </footer>
-
-    <!-- arquivos js -->
-    <script type="text/javascript" src="js/navbar.js"></script>
-    <script type="text/javascript" src="js/excluir.js"></script>
-    <script type="text/javascript" src="js/registrar.js"></script>
-    <script type="text/javascript" src="js/voltar.js"></script>
 </body>
 
 </html>

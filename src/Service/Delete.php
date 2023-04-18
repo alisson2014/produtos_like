@@ -6,22 +6,25 @@ use PDO;
 
 final class Delete
 {
+    private PDO $pdo;
     private readonly string $queryDelete;
 
     public function __construct(
         string $queryDelete,
+        PDO $pdo
     ) {
         $this->queryDelete = $queryDelete;
+        $this->pdo = $pdo;
     }
 
-    final public function delete(PDO $pdo): void
+    final public function delete(): bool
     {
-        $delete = $pdo->prepare($this->queryDelete);
+        $delete = $this->pdo->prepare($this->queryDelete);
 
         if ($delete->execute()) {
-            mensagem("Sucesso, registro excluído com sucesso");
-        } else {
-            mensagem("Erro, erro ao tentar excluir o registro");
+            return true;
         }
+
+        return false;
     }
 }

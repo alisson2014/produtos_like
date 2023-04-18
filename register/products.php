@@ -8,13 +8,13 @@ if (!empty($id)) {
     $id = (int)$id;
     $consult = new Consult("SELECT * FROM produto
     WHERE id = '{$id}' LIMIT 1");
-    $dados = $consult->sqlConsult($pdo);
+    $dados = $consult->sqlConsult($pdo)[0];
 }
 
-$id = $dados[0]->id ?? NULL;
-$produto = $dados[0]->nome ?? NULL;
-$valor = $dados[0]->valor ?? NULL;
-$categorias_id = $dados[0]->subcategoria ?? NULL;
+$id = $dados->id ?? NULL;
+$produto = $dados->nome ?? NULL;
+$valor = $dados->valor ?? NULL;
+$categorias_id = $dados->subcategoria ?? NULL;
 ?>
 
 <div class="card">

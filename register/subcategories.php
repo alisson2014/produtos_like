@@ -7,11 +7,11 @@ $id = $_GET["id"] ?? NULL;
 if (!empty($id)) {
     $id = (int)$id;
     $consult = new Consult("SELECT * FROM subcategoria WHERE id = '{$id}'");
-    $dados = $consult->sqlConsult($pdo);
+    $dados = $consult->sqlConsult($pdo)[0];
 }
 
-$id = $dados[0]->id ?? NULL;
-$nome = $dados[0]->nome ?? NULL;
+$id = $dados->id ?? NULL;
+$nome = $dados->nome ?? NULL;
 
 ?>
 

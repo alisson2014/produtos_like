@@ -8,11 +8,11 @@ if (!empty($id)) {
     $id = (int)$id;
     $consult = new Consult("SELECT * FROM orcamento
     WHERE id = '{$id}' LIMIT 1");
-    $dados = $consult->sqlConsult($pdo);
+    $dados = $consult->sqlConsult($pdo)[0];
 }
 
-$id = $dados[0]->id ?? NULL;
-$nomeCliente = $dados[0]->nomeCliente ?? NULL;
+$id = $dados->id ?? NULL;
+$nomeCliente = $dados->nomeCliente ?? NULL;
 ?>
 <div class="card">
     <h2 class="title">Adicionar produtos</h2>

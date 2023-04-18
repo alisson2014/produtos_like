@@ -1,13 +1,13 @@
 <?php
 
-use CRUD_PHP\Action\Service\Consult;
+use CRUD_PHP\Action\Service\Lister;
 
 $id = $_GET["id"] ?? NULL;
 
 if (!empty($id)) {
     $id = (int)$id;
-    $consult = new Consult("SELECT * FROM subcategoria WHERE id = '{$id}'");
-    $dados = $consult->sqlConsult($pdo)[0];
+    $consult = new Lister("SELECT * FROM subcategoria WHERE id = '{$id}'", $pdo);
+    $dados = $consult->returnsData()[0];
 }
 
 $id = $dados->id ?? NULL;

@@ -1,8 +1,11 @@
 <?php
 
-use CRUD_PHP\Action\Service\Consult;
+use CRUD_PHP\Action\Service\Lister;
 
-$consultBudgets = new Consult("SELECT o.id AS idOrcamento, o.nomeCliente AS nomeCliente, o.data AS data, p.id AS idProduto, p.nome AS nomeProduto, p.valor AS valorProduto, SUM(p.valor * po.quantidade) as total FROM orcamento as o JOIN produtosorcamento as po ON po.orcamento = o.id JOIN produto as p ON p.id = po.produto GROUP BY o.id");
+$consultBudgets = new Lister(
+    "SELECT o.id AS idOrcamento, o.nomeCliente AS nomeCliente, o.data AS data, p.id AS idProduto, p.nome AS nomeProduto, p.valor AS valorProduto, SUM(p.valor * po.quantidade) as total FROM orcamento as o JOIN produtosorcamento as po ON po.orcamento = o.id JOIN produto as p ON p.id = po.produto GROUP BY o.id",
+    $pdo
+);
 ?>
 <div class="card">
     <h2 class="title">Orçamento de produto</h2>
@@ -16,7 +19,7 @@ $consultBudgets = new Consult("SELECT o.id AS idOrcamento, o.nomeCliente AS nome
             </tr>
         </thead>
         <?php
-        $consult = $consultBudgets->sqlConsult($pdo);
+        $consult = $consultBudgets->returnsData();
         foreach ($consult as $item) {
             $nomeCliente = $item->nomeCliente;
             $data = $item->data;

@@ -1,8 +1,11 @@
 <?php
 
-use CRUD_PHP\Action\Service\Consult;
+use CRUD_PHP\Action\Service\Lister;
 
-$consultSucategories = new Consult("SELECT * FROM subcategoria");
+$consultSucategories = new Lister(
+    "SELECT * FROM subcategoria",
+    $pdo
+);
 
 ?>
 <div class="subcategories">
@@ -16,7 +19,7 @@ $consultSucategories = new Consult("SELECT * FROM subcategoria");
         </thead>
         <tbody class="table_body">
             <?php
-            $consult = $consultSucategories->sqlConsult($pdo);
+            $consult = $consultSucategories->returnsData();
 
             foreach ($consult as $item) {
                 $nome = $item->nome;

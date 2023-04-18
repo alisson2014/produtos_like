@@ -1,14 +1,14 @@
 <?php
 
-use CRUD_PHP\Action\Service\Consult;
+use CRUD_PHP\Action\Service\Lister;
 
 $id = $_GET["id"] ?? NULL;
 
 if (!empty($id)) {
     $id = (int)$id;
-    $consult = new Consult("SELECT * FROM produto
-    WHERE id = '{$id}' LIMIT 1");
-    $dados = $consult->sqlConsult($pdo)[0];
+    $consult = new Lister("SELECT * FROM produto
+    WHERE id = '{$id}' LIMIT 1", $pdo);
+    $dados = $consult->returnsData()[0];
 }
 
 $id = $dados->id ?? NULL;

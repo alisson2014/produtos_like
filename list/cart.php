@@ -1,10 +1,10 @@
 <?php
 
-use CRUD_PHP\Action\Service\Consult;
+use CRUD_PHP\Action\Service\Lister;
 
 $id = $_GET["id"] ?? NULL;
 
-$consultCart = new Consult("SELECT p.id as idProduto, p.nome, p.valor, o.*, po.quantidade FROM produtosorcamento as po JOIN orcamento as o ON o.id = po.orcamento JOIN produto as p ON p.id = po.produto WHERE o.id = '{$id}'");
+$consultCart = new Lister("SELECT p.id as idProduto, p.nome, p.valor, o.*, po.quantidade FROM produtosorcamento as po JOIN orcamento as o ON o.id = po.orcamento JOIN produto as p ON p.id = po.produto WHERE o.id = '{$id}'", $pdo);
 ?>
 <div class="cart">
     <h2 class="title">Carrinho</h2>
@@ -17,7 +17,7 @@ $consultCart = new Consult("SELECT p.id as idProduto, p.nome, p.valor, o.*, po.q
             </tr>
         </thead>
         <?php
-        $consult = $consultCart->sqlConsult($pdo);
+        $consult = $consultCart->returnsData();
         foreach ($consult as $item) {
             $nomeProduto = $item->nome;
             $valor = $item->valor;

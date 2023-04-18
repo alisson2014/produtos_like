@@ -1,8 +1,8 @@
 <?php
 
-use CRUD_PHP\Action\Service\Consult;
+use CRUD_PHP\Action\Service\Lister;
 
-$consultProducts = new Consult("SELECT p.*,s.nome as nomeCategoria FROM produto as p JOIN subcategoria as s ON s.id = p.subcategoria");
+$consultProducts = new Lister("SELECT p.*,s.nome as nomeCategoria FROM produto as p JOIN subcategoria as s ON s.id = p.subcategoria", $pdo);
 ?>
 <div class="products_page">
     <h2 class="title">Produtos</h2>
@@ -16,7 +16,7 @@ $consultProducts = new Consult("SELECT p.*,s.nome as nomeCategoria FROM produto 
             </tr>
         </thead>
         <?php
-        $consult = $consultProducts->sqlConsult($pdo);
+        $consult = $consultProducts->returnsData();
         foreach ($consult as $item) {
             $nomeCategoria = $item->nomeCategoria;
             $produto = $item->nome;

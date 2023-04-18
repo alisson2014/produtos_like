@@ -1,8 +1,8 @@
 <?php
 
-use CRUD_PHP\Action\Service\Consult;
+use CRUD_PHP\Action\Service\Lister;
 
-$consultClients = new Consult("SELECT * FROM orcamento ORDER BY data DESC");
+$consultClients = new Lister("SELECT * FROM orcamento ORDER BY data DESC", $pdo);
 ?>
 <div class="budgets">
     <h2 class="title">Clientes</h2>
@@ -15,7 +15,7 @@ $consultClients = new Consult("SELECT * FROM orcamento ORDER BY data DESC");
         </thead>
         <tbody class="table_body">
             <?php
-            $consult = $consultClients->sqlConsult($pdo);
+            $consult = $consultClients->returnsData();
             foreach ($consult as $item) {
                 $nomeCliente = $item->nomeCliente;
                 $id = $item->id;

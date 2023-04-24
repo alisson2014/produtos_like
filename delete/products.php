@@ -21,6 +21,6 @@ if (empty($dados[0]->id)) {
 $delete = new Delete("DELETE FROM produto WHERE id = {$id} LIMIT 1", $pdo);
 try {
     $delete->delete();
-} catch (Exception $erro) {
+} catch (Throwable) {
     mensagem("Erro, este produto não pode ser excluido pois possui orçamentos cadastrados!");
 }

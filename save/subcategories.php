@@ -1,4 +1,7 @@
 <?php
+
+use CRUD_PHP\Action\Service\Lister;
+
 if (!$_POST)
     mensagem("Erro Requisiçã inválida");
 
@@ -10,12 +13,10 @@ $subcategoria = trim($_POST["subcategoria"] ?? NULL);
 if (empty($subcategoria))
     mensagem("Erro, preencha a subcategoria");
 
-$sqlsubcategoria = "SELECT id FROM subcategoria 
-    WHERE nome = '{$subcategoria}'
-AND id <> '{$id}' LIMIT 1";
-$consultasubcategoria = $pdo->prepare($sqlsubcategoria);
-$consultasubcategoria->execute();
-$dados = $consultasubcategoria->fetch(PDO::FETCH_OBJ);
+$consult = new Lister("SELECT id FROM subcategoria 
+WHERE nome = '{$subcategoria}'
+AND id <> '{$id}' LIMIT 1", $pdo);
+$dados = $consult->returnsData()[0];
 
 if (!empty($dados->id))
     mensagem("Erro, já existe um registro com esta subcategoria cadastrada no sistema");

@@ -19,6 +19,6 @@ if (empty($dados->id)) {
 $delete = new Delete("DELETE FROM subcategoria WHERE id = '{$id}' LIMIT 1", $pdo);
 try {
     $delete->delete();
-} catch (Exception $erro) {
+} catch (Throwable) {
     mensagem("Erro, esta categoria não pode ser excluida pois possui produtos cadastrados!");
 }

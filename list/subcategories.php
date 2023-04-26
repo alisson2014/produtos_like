@@ -9,37 +9,37 @@ $consultSucategories = new Lister(
 
 ?>
 <div class="subcategories">
-    <h2 class="title">Subcategorias</h2>
-    <table class="table">
-        <thead class="table_head">
-            <tr class="row">
-                <td class="col">Subcategoria</td>
-                <td class="col actions">Ações</td>
-            </tr>
-        </thead>
-        <tbody class="table_body">
-            <?php
-            $consult = $consultSucategories->returnsData();
-
-            foreach ($consult as $item) {
-                $nome = $item->nome;
-                $id = $item->id;
-            ?>
-                <tr class="row">
-                    <td class="col">
-                        <?= $nome ?>
-                    </td>
-                    <td class="col buttons">
-                        <button type="button" onclick="registrar('subcategories', <?= $id ?>)">Editar</button>
-                        <button type="button" onclick="excluir('subcategories', <?= $id ?>)">Excluir</button>
-                    </td>
+    <h2 class="title">Categorias</h2>
+    <div class="table-responsive">
+        <table class="table table-striped" style="width: 55vw">
+            <thead>
+                <tr>
+                    <th scope="col" class="th">#</th>
+                    <th scope="col" class="th">Categoria</th>
+                    <th scope="col" class="th actions">Ações</th>
                 </tr>
-            <?php
-            }
-            ?>
-        </tbody>
-    </table>
-    <button type="button" onclick="registrar('subcategories')" class="categories_button">
+            </thead>
+            <tbody>
+                <?php
+                foreach ($consultSucategories->returnsData() as $data) {
+                    $id = $data->id;
+                    $nome = $data->nome;
+                ?>
+                    <tr>
+                        <th scope="row" class="th"><?= $id ?></th>
+                        <td class="th"><?= $nome ?></td>
+                        <td class="actions buttons">
+                            <button type="button" onclick="registrar('subcategories', <?= $id ?>)" class="btn btn-primary btn-md">Editar</button>
+                            <button type="button" onclick="excluir('subcategories', <?= $id ?>)" class="btn btn-danger btn-md">Excluir</button>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <button type="button" onclick="registrar('subcategories')" class="btn btn-info btn-lg">
         Nova categoria
     </button>
 </div>

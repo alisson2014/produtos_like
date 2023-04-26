@@ -6,38 +6,42 @@ $consultProducts = new Lister("SELECT p.*,s.nome as nomeCategoria FROM produto a
 ?>
 <div class="products_page">
     <h2 class="title">Produtos</h2>
-    <table class="table">
-        <thead class="table_head">
-            <tr class="row">
-                <td class="col">Produto</td>
-                <td class="col">Valor</td>
-                <td class="col">Subcategoria</td>
-                <td class="col actions">Ações</td>
-            </tr>
-        </thead>
-        <?php
-        $consult = $consultProducts->returnsData();
-        foreach ($consult as $item) {
-            $nomeCategoria = $item->nomeCategoria;
-            $produto = $item->nome;
-            $valor = $item->valor;
-            $id = $item->id;
-            $valorFormatado = formatarValor($valor);
-        ?>
-            <tbody class="table_body">
-                <tr class="row">
-                    <td class="col"><?= $produto ?></td>
-                    <td class="col"><?= $valorFormatado ?></td>
-                    <td class="col"><?= $nomeCategoria ?></td>
-                    <td class="col buttons">
-                        <button type="button" onclick="registrar('products', <?= $id ?>)">Editar</button>
-                        <button type="button" onclick="excluir('products', <?= $id ?>)">Excluir</button>
-                    </td>
+    <div class="table-responsive">
+        <table class="table table-striped" style="width: 55vw">
+            <thead>
+                <tr>
+                    <th scope="col" class="th">#</th>
+                    <th scope="col" class="th">Produto</th>
+                    <th scope="col" class="th">Categoria</th>
+                    <th scope="col" class="th">Valor</th>
+                    <th scope="col" class="th actions">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $consult = $consultProducts->returnsData();
+                foreach ($consult as $item) {
+                    $nomeCategoria = $item->nomeCategoria;
+                    $produto = $item->nome;
+                    $valor = $item->valor;
+                    $id = $item->id;
+                    $valorFormatado = formatarValor($valor);
+                ?>
+                    <tr>
+                        <th scope="row" class="th"><?= $id ?></th>
+                        <td class="th"><?= $produto ?></td>
+                        <td class="th"><?= $nomeCategoria ?></td>
+                        <td class="th">R$<?= $valorFormatado ?></td>
+                        <td class="actions buttons">
+                            <button type="button" onclick="registrar('products', <?= $id ?>)" class="btn btn-primary">Editar</button>
+                            <button type="button" onclick="excluir('products', <?= $id ?>)" class="btn btn-danger">Excluir</button>
+                        </td>
+                    <?php
+                }
+                    ?>
             </tbody>
-        <?php
-        }
-        ?>
-    </table>
+        </table>
+    </div>
     <button type="button" onclick="registrar('products')" class="categories_button">
         Novo produto
     </button>

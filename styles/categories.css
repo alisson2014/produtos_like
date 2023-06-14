@@ -3,8 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 32px;
+    gap: 28px;
 }
 
 .categories_button {

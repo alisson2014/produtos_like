@@ -18,6 +18,8 @@ require_once "autoload.php";
     <meta name="keywords" content="HTML, CSS, JavaScript, PHP e SQL" />
     <meta name="author" content="Alisson Vincius">
     <title>Sistema de cadastro</title>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
     <!-- arquivos css -->
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -34,6 +36,8 @@ require_once "autoload.php";
     <script type="text/javascript" src="js/excluir.js" defer></script>
     <script type="text/javascript" src="js/registrar.js" defer></script>
     <script type="text/javascript" src="js/voltar.js" defer></script>
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </head>
 
 <body>
